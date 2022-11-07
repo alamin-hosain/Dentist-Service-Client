@@ -1,0 +1,44 @@
+[
+    {
+        "name": "Dental Implants",
+        "img": "https://www.nuffielddental.com.sg/hubfs/dental-implants.jpg",
+        "description": "Dental implants are a permanent solution to missing teeth. Shaped like small screws, they serve the same function as your natural tooth root and serve as a strong foundation for an artificial tooth. Dental implants in Singapore are typically made of titanium and surgically inserted into the jawbone. There are benefits to choosing dental implants over other teeth replacement options, such as not having to rely on neighbouring teeth and not needing replacements, unlike removable bridges or dentures. Implants have added benefits of strengthening existing jawbone. Materials for implants include titanium or ceramic.",
+        "rating": 4.9,
+        "price": 120
+    },
+    {
+        "name": "Root Canal Treatment",
+        "img": "https://www.nuffielddental.com.sg/hubfs/root-canal-treatment-1.jpg",
+        "description": "During this dental procedure, the inflamed or infected pulp is removed and the inside of the tooth is carefully cleaned and disinfected, then filled and sealed with a sterile rubber filling in its place in your root canal to prevent pain and infection. Inside your tooth, under the white enamel and dentin, is a pulp tissue. This tissue contains blood vessels, nerves and connective tissue, which help grow the root of your tooth during its development. A fully-developed tooth can survive without the pulp because the tooth continues to be nourished by the tissues surrounding it. The pulp, or soft tissues in your natural tooth, is made up of nerves and blood vessels. It can become irreversibly diseased from deep decay or injury. This can often cause severe pain and lead to infection if untreated.",
+        "rating": 4.6,
+        "price": 140
+    },
+    {
+        "name": "Composite Bonding",
+        "img": "https://www.nuffielddental.com.sg/hubfs/composite-bonding-smiling-girl-whitening-teeth-dental-care-oral-health.jpg",
+        "description": "Composite bonding is a cosmetic dental procedure done to improve the appearance and oral health. It uses a high-quality, aesthetic, tooth-coloured filling resin bonding material (called a composite resin or composite material). It is a painless and minimally invasive procedure, with no local anaesthetic or removal of significant tooth substance needed. Composite bonding is a procedure which involves adapting and binding an initially moldable composite onto the surface of the tooth and then setting it firmly in place.",
+        "rating": 4.9,
+        "price": 200
+    },
+    {
+        "name": "Digital Smile Design",
+        "img": "https://www.nuffielddental.com.sg/hubfs/nuffield%20digital%20smile%20design.jpg",
+        "description": "The Nuffield Digital Smile Design works by analysing facial and dental relationships and proportions. By thoroughly examining high-resolution digital photographs, 8K video recordings of your facial expressions, and virtual 3D models of your teeth, Nuffield dentists can customise a treatment to achieve your Hollywood smile.Composite bonding is a cosmetic dental procedure done to improve the appearance and oral health. It uses a high-quality, aesthetic, tooth-coloured filling resin bonding material (called a composite resin or composite material). It is a painless and minimally invasive procedure, with no local anaesthetic or removal of significant tooth substance needed. Composite bonding is a procedure which involves adapting and binding an initially moldable composite onto the surface of the tooth and then setting it firmly in place.",
+        "rating": 4.7,
+        "price": 250
+    },
+    {
+        "name": "Metal-Free Dental Implants",
+        "img": "https://www.nuffielddental.com.sg/hubfs/metal-free-dental-implants-dental-care-oral-health.jpg",
+        "description": "Metal-free dental implants are tooth-coloured, made of ceramic and are sometimes preferred over metal implants for aesthetic reasons. Dental implants are inserted in a two-step process: first, the implant is inserted and second, a temporary crown is installed.Composite There are two types of dental implants: titanium and zirconia. Metal dental implant fixtures are made of titanium, whilst metal-free dental implant fixtures are made of ceramic. Although titanium metal implants have been used largly, the novel zirconia dental implants is a unique implant material that is starting to gain prevalent usage because of its aesthetic appeal. After the surgical phase of treatment, the prosthetic phase begins: a replacement tooth in the form of a crown, bridge or denture, is placed over the implant.",
+        "rating": 4.8,
+        "price": 260
+    },
+    {
+        "name": "Teeth Whitening",
+        "img": "https://www.nuffielddental.com.sg/hubfs/teeth-whitening-pretty-girl-smiling-dental-care-oral-health.jpg",
+        "description": "Teeth whitening, as its name suggests, is the lightening of the colour of your teeth through the application of a safe and medically approved gel. It is fast, easy and minimally invasive, requiring no local anaesthetic or any removal of tooth substance. Professional teeth whitening procedures in Singapore usually encumbers the use of peroxide.Although titanium metal implants have been used largly, the novel zirconia dental implants is a unique implant material that is starting to gain prevalent usage because of its aesthetic appeal. After the surgical phase of treatment, the prosthetic phase begins: a replacement tooth in the form of a crown, bridge or denture, is placed over the implant.",
+        "rating": 4.6,
+        "price": 320
+    }
+]
