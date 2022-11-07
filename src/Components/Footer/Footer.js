@@ -8,7 +8,7 @@ const Footer = () => {
                     <div className="grid grid-cols-2 gap-5 row-gap-8 lg:col-span-4 md:grid-cols-4">
                         <div>
                             <p className="font-medium tracking-wide text-gray-300">
-                                Category
+                                Other Dentist
                             </p>
                             <ul className="mt-2 space-y-2">
                                 <li>
@@ -16,7 +16,7 @@ const Footer = () => {
                                         href="/"
                                         className="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200"
                                     >
-                                        News
+                                        HarbourFront
                                     </a>
                                 </li>
                                 <li>
@@ -24,7 +24,7 @@ const Footer = () => {
                                         href="/"
                                         className="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200"
                                     >
-                                        World
+                                        Kovan
                                     </a>
                                 </li>
                                 <li>
@@ -32,7 +32,7 @@ const Footer = () => {
                                         href="/"
                                         className="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200"
                                     >
-                                        Games
+                                        Novena
                                     </a>
                                 </li>
                                 <li>
@@ -40,20 +40,20 @@ const Footer = () => {
                                         href="/"
                                         className="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200"
                                     >
-                                        References
+                                        Orchard
                                     </a>
                                 </li>
                             </ul>
                         </div>
                         <div>
-                            <p className="font-medium tracking-wide text-gray-300">Apples</p>
+                            <p className="font-medium tracking-wide text-gray-300">ABOUT</p>
                             <ul className="mt-2 space-y-2">
                                 <li>
                                     <a
                                         href="/"
                                         className="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200"
                                     >
-                                        Web
+                                        About Us
                                     </a>
                                 </li>
                                 <li>
@@ -61,7 +61,7 @@ const Footer = () => {
                                         href="/"
                                         className="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200"
                                     >
-                                        eCommerce
+                                        Dentists
                                     </a>
                                 </li>
                                 <li>
@@ -69,7 +69,7 @@ const Footer = () => {
                                         href="/"
                                         className="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200"
                                     >
-                                        Business
+                                        Resources
                                     </a>
                                 </li>
                                 <li>
@@ -77,7 +77,7 @@ const Footer = () => {
                                         href="/"
                                         className="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200"
                                     >
-                                        Entertainment
+                                        Join Us
                                     </a>
                                 </li>
                                 <li>
@@ -85,20 +85,20 @@ const Footer = () => {
                                         href="/"
                                         className="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200"
                                     >
-                                        Portfolio
+                                        Contact Us
                                     </a>
                                 </li>
                             </ul>
                         </div>
                         <div>
-                            <p className="font-medium tracking-wide text-gray-300">Cherry</p>
+                            <p className="font-medium tracking-wide text-gray-300">SERVICES</p>
                             <ul className="mt-2 space-y-2">
                                 <li>
                                     <a
                                         href="/"
                                         className="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200"
                                     >
-                                        Media
+                                        Specialty Services
                                     </a>
                                 </li>
                                 <li>
@@ -106,7 +106,7 @@ const Footer = () => {
                                         href="/"
                                         className="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200"
                                     >
-                                        Brochure
+                                        Bite Therapy
                                     </a>
                                 </li>
                                 <li>
@@ -114,7 +114,7 @@ const Footer = () => {
                                         href="/"
                                         className="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200"
                                     >
-                                        Nonprofit
+                                        Cosmetic Dentistry
                                     </a>
                                 </li>
                                 <li>
@@ -122,7 +122,7 @@ const Footer = () => {
                                         href="/"
                                         className="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200"
                                     >
-                                        Educational
+                                        Dental Implantology
                                     </a>
                                 </li>
                                 <li>
@@ -130,14 +130,14 @@ const Footer = () => {
                                         href="/"
                                         className="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200"
                                     >
-                                        Projects
+                                        Full Mouth Rehabilitation
                                     </a>
                                 </li>
                             </ul>
                         </div>
                         <div>
                             <p className="font-medium tracking-wide text-gray-300">
-                                Business
+                                PATIENT INFO
                             </p>
                             <ul className="mt-2 space-y-2">
                                 <li>
@@ -145,7 +145,7 @@ const Footer = () => {
                                         href="/"
                                         className="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200"
                                     >
-                                        Infopreneur
+                                        Sedation
                                     </a>
                                 </li>
                                 <li>
@@ -153,7 +153,7 @@ const Footer = () => {
                                         href="/"
                                         className="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200"
                                     >
-                                        Personal
+                                        Relaxation Techniques
                                     </a>
                                 </li>
                                 <li>
@@ -161,7 +161,7 @@ const Footer = () => {
                                         href="/"
                                         className="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200"
                                     >
-                                        Wiki
+                                        International Patients
                                     </a>
                                 </li>
                                 <li>
@@ -169,7 +169,7 @@ const Footer = () => {
                                         href="/"
                                         className="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200"
                                     >
-                                        Forum
+                                        Dental Insurance
                                     </a>
                                 </li>
                             </ul>
@@ -194,8 +194,7 @@ const Footer = () => {
                             </button>
                         </form>
                         <p className="mt-4 text-sm text-gray-500">
-                            Bacon ipsum dolor amet short ribs pig sausage prosciuto chicken
-                            spare ribs salami.
+                            Subscribe to our Dentist Weekly NewsLater
                         </p>
                     </div>
                 </div>

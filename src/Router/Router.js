@@ -13,7 +13,10 @@ import Team from "../Pages/Team/Team";
 const router = createBrowserRouter([
     {
         path: '/', element: <Main />, errorElement: <ErrorElement />, children: [
-            { path: '/', element: <Home /> },
+            {
+                path: '/', element: <Home />,
+                loader: () => fetch('http://localhost:5000/services'),
+            },
             { path: '/blog', element: <Blog /> },
             { path: '/team', element: <Team /> },
             { path: '/contact', element: <Contact /> },
