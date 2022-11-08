@@ -2,20 +2,21 @@ import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import SingleReview from './SingleReview'
 
-const Testimonial = () => {
+const Testimonial = ({ singleService }) => {
+    const { _id } = singleService[0];
     const [reviews, setReviews] = useState([])
-    const [refresh, setRefrest] = useState(false);
+    const [refresh, setRefresh] = useState(false);
 
     useEffect(() => {
-        fetch('http://localhost:5000/reviews')
+        fetch(`http://localhost:5000/reviews/${_id}`)
             .then(res => res.json())
             .then(data => {
                 setReviews(data)
-                setRefrest(!refresh)
+                setRefresh(!refresh)
             })
     }, [refresh])
 
-
+    console.log(reviews)
     return (
         <div className="container px-4 mx-auto">
             <span className="text-xs text-gray-300 uppercase tracking-wide">What people say</span>

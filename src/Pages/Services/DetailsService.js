@@ -1,14 +1,16 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { ToastContainer, toast } from 'react-toastify';
 
 import 'react-toastify/dist/ReactToastify.css';
 import { Link, useLoaderData } from 'react-router-dom'
 import BelowMenu from '../../Components/Shared/BelowMenu';
 import Testimonial from './Testimonial/Testimonial';
+import { AuthContext } from '../../contexts/AuthProvider';
 
 const DetailsService = () => {
     const singleService = useLoaderData();
-    const { img, name, price, rating, description } = singleService[0];
+    const { img, name, price, rating, description, _id } = singleService[0];
+    const { user } = useContext(AuthContext);
 
     const handleSubmitReview = (e) => {
         e.preventDefault();
@@ -19,6 +21,11 @@ const DetailsService = () => {
         const time = e.target.time.value;
 
         const newReview = {
+            email: user.email,
+            userName: user.displayName,
+            serviceId: _id,
+            serviceName: singleService[0].name,
+            servicePrice: price,
             name,
             rating,
             photoUrl,
@@ -87,24 +94,36 @@ const DetailsService = () => {
 
 
             <section className="py-24 2xl:py-44 bg-blueGray-100 rounded-t-10xl overflow-hidden">
+                {
+                    user ? <>
+                        <div className='text-center text-lg mb-4 font-semibold'>
+                            <h2 className=''>{user.displayName} Please Add a Review</h2>
+                        </div>
+                        <form className='flex flex-col items-center w-3/4 mx-auto border p-8 mb-16' onSubmit={handleSubmitReview}>
+                            <h2 className='text-2xl mb-6 font-semibold'>Add A Review</h2>
 
-                <form className='flex flex-col items-center w-3/4 mx-auto border p-8 mb-16' onSubmit={handleSubmitReview}>
-                    <h2 className='text-2xl mb-6 font-semibold'>Add A Review</h2>
+                            <input className='border p-2 px-4 w-1/2 rounded-lg mb-8' name='name' type="text" placeholder='Full Name' />
 
-                    <input className='border p-2 px-4 w-1/2 rounded-lg mb-8' name='name' type="text" placeholder='Full Name' />
+                            <input className='border p-2 px-4 w-1/2 rounded-lg mb-8' name='rating' type="text" placeholder='Type Your Rating Here Out of 5' />
 
-                    <input className='border p-2 px-4 w-1/2 rounded-lg mb-8' name='rating' type="text" placeholder='Type Your Rating Here Out of 5' />
+                            <input className='border p-2 px-4 w-1/2 rounded-lg mb-8' name='photo' type="text" placeholder='Your Photo URL' />
 
-                    <input className='border p-2 px-4 w-1/2 rounded-lg mb-8' name='photo' type="text" placeholder='Your Photo URL' />
+                            <textarea className='border p-2 px-4 w-1/2 rounded-lg mb-8' name="review" placeholder='Type Your Review Here'></textarea>
 
-                    <textarea className='border p-2 px-4 w-1/2 rounded-lg mb-8' name="review" placeholder='Type Your Review Here'></textarea>
+                            <input className='border p-1 px-4' name='time' type="time" />
 
-                    <input className='border p-1 px-4' name='time' type="time" />
+                            <input className='bg-[#f36259] p-2 px-8 rounded-md cursor-pointer text-white text-lg mt-8' type="submit" value='Submit' />
+                        </form>
+                    </>
 
-                    <input className='bg-[#f36259] p-2 px-8 rounded-md cursor-pointer text-white text-lg mt-8' type="submit" value='Submit' />
-                </form>
+                        :
+                        <div className='text-center mb-10'>
+                            <button className='text-2xl font-bold text-center'>Please <Link className='bg-red-500 p-1 px-4 rounded-lg text-white' to='/login'>login</Link> to add a review.</button>
+                        </div>
+                }
 
-                <Testimonial />
+
+                <Testimonial singleService={singleService} />
             </section>
         </div>
     )
