@@ -1,17 +1,21 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
+import 'react-photo-view/dist/react-photo-view.css';
+import { PhotoProvider, PhotoView } from 'react-photo-view';
 
 const Service = ({ service }) => {
     const { img, name, description, rating, price, _id } = service;
     return (
         <div className="overflow-hidden transition-shadow duration-300 bg-white rounded border border-red-200 p-4 shadow-sm">
-            <a href="/" aria-label="Article">
-                <img
-                    src={img}
-                    className="object-cover w-full h-64 rounded"
-                    alt=""
-                />
-            </a>
+
+            <PhotoProvider>
+                <div className="foo">
+                    <PhotoView src={img}>
+                        <img src={img} className="w-full h-64 rounded cursor-pointer" style={{ objectFit: 'cover' }} alt="" />
+                    </PhotoView>
+                </div>
+            </PhotoProvider>
+
             <div className="py-5">
                 <a
                     href="/"
@@ -44,12 +48,10 @@ const Service = ({ service }) => {
                         </div>
                         <p className="font-semibold">{price}</p>
                     </a>
-
-
                 </div>
 
             </div>
-            <Link to={`/detailsservice/${_id}`}><button className='bg-[#f36259] p-2 px-6 w-full mt-6 text-white text-lg hover:bg-[#c14a42] '>View Details</button></Link>
+            <Link to={`/services/${_id}`}><button className='bg-[#f36259] p-2 px-6 w-full mt-6 text-white text-lg hover:bg-[#c14a42] '>View Details</button></Link>
 
         </div>
     )
