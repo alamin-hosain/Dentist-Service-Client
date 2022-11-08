@@ -1,8 +1,11 @@
-import React from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { FaGoogle, FaGithub } from "react-icons/fa";
+import { AuthContext } from '../../contexts/AuthProvider';
+
 
 const Register = () => {
+    const { signUp, updateUser } = useContext(AuthContext);
 
     const handleRegister = (e) => {
         e.preventDefault();
@@ -10,6 +13,15 @@ const Register = () => {
         const email = e.target.email.value;
         const password = e.target.password.value;
 
+        signUp(email, password)
+            .then(res => {
+                const user = res.user;
+                updateUser(name)
+                    .then(() => { })
+                    .catch(e => console.error(e))
+                console.log(user)
+            })
+            .catch(e => console.error(e))
 
     }
 

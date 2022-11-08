@@ -1,11 +1,22 @@
-import React, { useState } from 'react'
-import { NavLink } from 'react-router-dom';
+import React, { useContext, useState } from 'react'
+import toast from 'react-hot-toast';
+import { Link, NavLink } from 'react-router-dom';
 import logo from '../../assets/logo.png';
+import { AuthContext } from '../../contexts/AuthProvider';
 import './Navbar.css';
 
 const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const { user, logOUt } = useContext(AuthContext);
 
+    const handleSignOut = () => {
+        logOUt()
+            .then(() => {
+                toast.success('Log Out Successful')
+
+            })
+            .catch(e => console.error(e));
+    }
     return (
         <>
             <div className='hidden lg:flex justify-center items-center pt-16 pb-6'>
@@ -65,14 +76,40 @@ const Navbar = () => {
                                 Profile
                             </NavLink>
                         </li>
-                        <li>
-                            <NavLink
-                                to="/register"
-                                className="font-semibold tracking-wide duration-200 uppercase bg-[#f36259] rounded-full p-1 px-4 text-white hover:bg-[#a62f27]"
-                            >
-                                Sign Up
-                            </NavLink>
-                        </li>
+                        {
+                            user ?
+                                <li onClick={handleSignOut}>
+                                    <Link
+                                        to="/register"
+                                        className="font-semibold tracking-wide duration-200 uppercase bg-[#f36259] rounded-full p-1 px-4 text-white hover:bg-[#a62f27]"
+                                    >
+                                        Sign Out
+                                    </Link>
+                                </li>
+
+                                :
+                                <>
+
+                                    <li>
+                                        <Link
+                                            to="/register"
+                                            className="font-semibold tracking-wide duration-200 uppercase bg-[#f36259] rounded-full p-1 px-4 text-white hover:bg-[#a62f27]"
+                                        >
+                                            Sign Up
+                                        </Link>
+                                    </li>
+
+
+                                    <li>
+                                        <Link
+                                            to="/login"
+                                            className="font-semibold tracking-wide duration-200 uppercase bg-[#f36259] rounded-full p-1 px-4 text-white hover:bg-[#a62f27]"
+                                        >
+                                            Login
+                                        </Link>
+                                    </li>
+                                </>
+                        }
                     </ul>
 
                     <div className="lg:hidden">
@@ -172,14 +209,40 @@ const Navbar = () => {
                                                     Profile
                                                 </NavLink>
                                             </li>
-                                            <li>
-                                                <NavLink
-                                                    to="/register"
-                                                    className="font-semibold tracking-wide text-gray-900  duration-200 uppercase hover:bg-[#f36259] hover:rounded-full hover:p-1 hover:px-4 hover:text-white"
-                                                >
-                                                    Sign Up
-                                                </NavLink>
-                                            </li>
+                                            {
+                                                user ?
+                                                    <li onClick={handleSignOut}>
+                                                        <Link
+                                                            to="/register"
+                                                            className="font-semibold tracking-wide duration-200 uppercase bg-[#f36259] rounded-full p-1 px-4 text-white hover:bg-[#a62f27]"
+                                                        >
+                                                            Sign Out
+                                                        </Link>
+                                                    </li>
+
+                                                    :
+                                                    <>
+
+                                                        <li>
+                                                            <Link
+                                                                to="/register"
+                                                                className="font-semibold tracking-wide duration-200 uppercase bg-[#f36259] rounded-full p-1 px-4 text-white hover:bg-[#a62f27]"
+                                                            >
+                                                                Sign Up
+                                                            </Link>
+                                                        </li>
+
+
+                                                        <li>
+                                                            <Link
+                                                                to="/login"
+                                                                className="font-semibold tracking-wide duration-200 uppercase bg-[#f36259] rounded-full p-1 px-4 text-white hover:bg-[#a62f27]"
+                                                            >
+                                                                Login
+                                                            </Link>
+                                                        </li>
+                                                    </>
+                                            }
 
                                         </ul>
                                     </nav>
