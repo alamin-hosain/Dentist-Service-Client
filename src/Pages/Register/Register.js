@@ -38,6 +38,7 @@ const Register = () => {
         signInWithGoogle()
             .then(result => {
                 const user = result.user;
+                navigate('/');
                 console.log(user)
             })
             .catch(e => console.error(e))
@@ -47,6 +48,7 @@ const Register = () => {
         signInWithGithub()
             .then(result => {
                 const user = result.user;
+                navigate('/');
                 console.log(user)
             })
             .catch(e => console.error(e))

@@ -30,6 +30,7 @@ const Login = () => {
         signInWithGoogle()
             .then(result => {
                 const user = result.user;
+                navigate(from, { replace: true });
                 console.log(user)
             })
             .catch(e => console.error(e))
@@ -39,6 +40,7 @@ const Login = () => {
         signInWithGithub()
             .then(result => {
                 const user = result.user;
+                navigate(from, { replace: true });
                 console.log(user)
             })
             .catch(e => console.error(e))

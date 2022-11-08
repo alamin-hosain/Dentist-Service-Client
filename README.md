@@ -1,4 +1,4 @@
-# Getting Started with Create React App
+# This site is created with below tools and libraries.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
