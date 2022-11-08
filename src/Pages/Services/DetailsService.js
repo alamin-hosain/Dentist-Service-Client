@@ -1,11 +1,35 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link, useLoaderData } from 'react-router-dom'
 import BelowMenu from '../../Components/Shared/BelowMenu';
 
 const DetailsService = () => {
     const singleService = useLoaderData();
     const { img, name, price, rating, description } = singleService[0];
+    const [reviews, setReviews] = useState({})
 
+    const handleSubmitReview = (e) => {
+        e.preventDefault();
+        const name = e.target.name.value;
+        const rating = e.target.rating.value;
+        const photoUrl = e.target.photo.value;
+        const addedReview = e.target.review.value;
+        const time = e.target.time.value;
+
+        const newReview = {
+            ...reviews,
+            name,
+            rating,
+            photoUrl,
+            addedReview,
+            time
+        }
+
+
+        setReviews(newReview)
+        e.target.reset();
+    }
+
+    console.log(reviews)
 
     return (
         <div>
@@ -46,44 +70,39 @@ const DetailsService = () => {
 
 
             <section className="py-24 2xl:py-44 bg-blueGray-100 rounded-t-10xl overflow-hidden">
+
+                <form className='flex flex-col items-center w-3/4 mx-auto border p-8 mb-16' onSubmit={handleSubmitReview}>
+                    <h2 className='text-2xl mb-6 font-semibold'>Add A Review</h2>
+
+                    <input className='border p-2 px-4 w-1/2 rounded-lg mb-8' name='name' type="text" placeholder='Full Name' />
+
+                    <input className='border p-2 px-4 w-1/2 rounded-lg mb-8' name='rating' type="text" placeholder='Type Your Rating Here Out of 5' />
+
+                    <input className='border p-2 px-4 w-1/2 rounded-lg mb-8' name='photo' type="text" placeholder='Your Photo URL' />
+
+                    <textarea className='border p-2 px-4 w-1/2 rounded-lg mb-8' name="review" placeholder='Type Your Review Here'></textarea>
+
+                    <input className='border p-1 px-4' name='time' type="time" />
+
+                    <input className='bg-[#f36259] p-2 px-8 rounded-md cursor-pointer text-white text-lg mt-8' type="submit" value='Submit' />
+                </form>
+
                 <div className="container px-4 mx-auto">
                     <span className="text-xs text-gray-300 uppercase tracking-wide">What people say</span>
                     <h1 className="mt-4 mb-6 text-5xl md:text-10xl xl:text-11xl font-heading font-medium leading-tight text-[#f36259]">Testimonials</h1>
 
                     <Link className="inline-block mb-14 text-3xl font-heading font-medium underline hover:text-darkBlueGray-700" href="#">1,218 reviews</Link>
-                    <div className="mb-2 shadow-lg rounded-t-8xl rounded-b-5xl overflow-hidden">
+                    <div className="mb-2 shadow-md border rounded-t-8xl rounded-b-5xl overflow-hidden">
                         <div className="pt-3 pb-3 md:pb-1 px-4 md:px-16 bg-white bg-opacity-40">
-                            <div className="flex flex-wrap items-center">
-                                <img className="mr-6" src="uinel-assets/images/ecommerce-reviews/user.png" alt="" />
-                                <h4 className="w-full md:w-auto text-xl font-heading font-medium">Faustina H. Fawn</h4>
-                                <div className="w-full md:w-px h-2 md:h-8 mx-8 bg-transparent md:bg-gray-200"></div>
-                                <span className="mr-4 text-xl font-heading font-medium">5.0</span>
-                                <div className="inline-flex">
-                                    <Link className="inline-block mr-1" href="#">
-                                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M20 7.91677H12.4167L10 0.416763L7.58333 7.91677H0L6.18335 12.3168L3.81668 19.5834L10 15.0834L16.1834 19.5834L13.8167 12.3168L20 7.91677Z" fill="#FFCB00"></path>
-                                        </svg>
-                                    </Link>
-                                    <Link className="inline-block mr-1" href="#">
-                                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M20 7.91677H12.4167L10 0.416763L7.58333 7.91677H0L6.18335 12.3168L3.81668 19.5834L10 15.0834L16.1834 19.5834L13.8167 12.3168L20 7.91677Z" fill="#FFCB00"></path>
-                                        </svg>
-                                    </Link>
-                                    <Link className="inline-block mr-1" href="#">
-                                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M20 7.91677H12.4167L10 0.416763L7.58333 7.91677H0L6.18335 12.3168L3.81668 19.5834L10 15.0834L16.1834 19.5834L13.8167 12.3168L20 7.91677Z" fill="#FFCB00"></path>
-                                        </svg>
-                                    </Link>
-                                    <Link className="inline-block mr-1" href="#">
-                                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M20 7.91677H12.4167L10 0.416763L7.58333 7.91677H0L6.18335 12.3168L3.81668 19.5834L10 15.0834L16.1834 19.5834L13.8167 12.3168L20 7.91677Z" fill="#FFCB00"></path>
-                                        </svg>
-                                    </Link>
-                                    <Link className="inline-block text-gray-200" href="#">
-                                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M20 7.91677H12.4167L10 0.416763L7.58333 7.91677H0L6.18335 12.3168L3.81668 19.5834L10 15.0834L16.1834 19.5834L13.8167 12.3168L20 7.91677Z" fill="#FFCB00"></path>
-                                        </svg>
-                                    </Link>
+                            <div className="flex flex-col items-center">
+                                <img className=" w-24 rounded-full shadow-md mt-6 mb-4" src="https://i.pinimg.com/236x/7b/e2/db/7be2dbac345f7c212f295b4464ef91af.jpg" alt="" />
+                                <div className='flex flex-col justify-center items-center'>
+                                    <h4 className="w-full md:w-auto text-xl font-heading font-medium">Faustina H. Fawn</h4>
+                                    <div className='flex justify-center items-center mt-6 bg-yellow-300 px-6'>
+                                        <p>Your Rating</p>
+                                        <div className="w-full md:w-px h-2 md:h-8 mx-8 bg-transparent md:bg-gray-900"></div>
+                                        <span className="mr-4 text-xl font-heading font-medium">5 Out of 5.0</span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
