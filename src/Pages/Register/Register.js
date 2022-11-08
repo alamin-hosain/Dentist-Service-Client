@@ -5,7 +5,7 @@ import { AuthContext } from '../../contexts/AuthProvider';
 
 
 const Register = () => {
-    const { signUp, updateUser } = useContext(AuthContext);
+    const { signUp, updateUser, signInWithGoogle, signInWithGithub } = useContext(AuthContext);
 
     const handleRegister = (e) => {
         e.preventDefault();
@@ -25,6 +25,24 @@ const Register = () => {
 
     }
 
+
+    const handleGoogleSignIn = () => {
+        signInWithGoogle()
+            .then(result => {
+                const user = result.user;
+                console.log(user)
+            })
+            .catch(e => console.error(e))
+    }
+
+    const handleGithubSignIn = () => {
+        signInWithGithub()
+            .then(result => {
+                const user = result.user;
+                console.log(user)
+            })
+            .catch(e => console.error(e))
+    }
 
 
     return (
@@ -55,8 +73,8 @@ const Register = () => {
                             </p>
                         </form>
                         <div className='text-white flex justify-around'>
-                            <button className='border p-2 px-2 rounded-lg flex items-center hover:bg-[#f36259]'><FaGoogle /><p className='ml-2'>Google Sign Up</p></button>
-                            <button className='border p-1 px-2 flex items-center rounded-lg hover:bg-[#f36259]'><FaGithub /><p className='ml-2'> Github Sign Up</p></button>
+                            <button onClick={handleGoogleSignIn} className='border p-2 px-2 rounded-lg flex items-center hover:bg-[#f36259]'><FaGoogle /><p className='ml-2'>Google Sign Up</p></button>
+                            <button onClick={handleGithubSignIn} className='border p-1 px-2 flex items-center rounded-lg hover:bg-[#f36259]'><FaGithub /><p className='ml-2'> Github Sign Up</p></button>
                         </div>
                     </div>
                 </div>
