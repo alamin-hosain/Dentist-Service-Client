@@ -7,6 +7,7 @@ import Home from "../Pages/Home/Home";
 import Login from "../Pages/Login/Login";
 import Profile from "../Pages/Profile/Profile";
 import Register from "../Pages/Register/Register";
+import DetailsService from "../Pages/Services/DetailsService";
 import Services from "../Pages/Services/Services";
 import Team from "../Pages/Team/Team";
 
@@ -24,6 +25,7 @@ const router = createBrowserRouter([
             { path: '/profile', element: <Profile /> },
             { path: '/register', element: <Register /> },
             { path: '/login', element: <Login /> },
+            { path: '/detailsservice/:id', element: <DetailsService /> },
         ]
     }
 ])

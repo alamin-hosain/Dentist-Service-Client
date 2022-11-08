@@ -11,7 +11,7 @@ const SingleService = ({ threeService }) => {
                 }
             </div>
             <div className='flex justify-center mt-24 '>
-                <Link to='/services'> <button className='bg-[#1B75BC] rounded-full text-white p-4 px-8 text-lg font-semibold uppercase cursor-pointer duration-200 hover:bg-[#15609a]'>Browse All Services</button></Link>
+                <Link to='/services'> <button className='bg-[#1B75BC] rounded-full text-white p-4 px-8 text-lg font-semibold uppercase cursor-pointer duration-200 hover:bg-[#15609a]'>See All Services</button></Link>
             </div>
         </div>
     )
