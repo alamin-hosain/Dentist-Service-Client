@@ -1,11 +1,14 @@
 import React, { useContext, useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { FaGoogle, FaGithub } from "react-icons/fa";
 import { AuthContext } from '../../contexts/AuthProvider';
+import { toast } from 'react-toastify';
 
 
 const Register = () => {
-    const { signUp, updateUser, signInWithGoogle, signInWithGithub } = useContext(AuthContext);
+    const { signUp, updateUser, signInWithGoogle, signInWithGithub, loading } = useContext(AuthContext);
+    const navigate = useNavigate();
+
 
     const handleRegister = (e) => {
         e.preventDefault();
@@ -20,6 +23,11 @@ const Register = () => {
                     .then(() => { })
                     .catch(e => console.error(e))
                 console.log(user)
+                toast.success('User Created Successfully')
+                navigate('/');
+                e.target.reset();
+                e.target.reset();
+
             })
             .catch(e => console.error(e))
 
@@ -47,7 +55,11 @@ const Register = () => {
 
     return (
         <section className="bg-gray-50 dark:bg-gray-200">
+            {loading &&
+                <div className="w-16 h-16 border-4 border-dashed rounded-full animate-spin mx-auto dark:border-green-700"></div>
+            }
             <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
+
                 <div className="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
                     <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
                         <h1 className="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">

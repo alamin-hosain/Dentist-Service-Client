@@ -1,10 +1,15 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import BelowMenu from '../../Components/Shared/BelowMenu'
+import { AuthContext } from '../../contexts/AuthProvider';
+import { pageTitle } from '../../utils/PageTitle';
 import SingleCard from './SingleCard';
 
 
 const Services = () => {
+    pageTitle('Services - Top Services for your teeth');
     const [allservices, setAllService] = useState([]);
+    const { loading } = useContext(AuthContext);
+
     useEffect(() => {
         fetch('http://localhost:5000/servicesall')
             .then(res => res.json())
@@ -14,9 +19,13 @@ const Services = () => {
     }, [])
 
 
+
     return (
         <>
             <BelowMenu title={'Services'} />
+
+
+
             <div className="hero">
                 <div className="hero-content flex-col lg:flex-row space-x-6">
                     <div className=' w-full lg:w-1/2'>
@@ -30,7 +39,9 @@ const Services = () => {
                     </div>
                 </div>
             </div>
-
+            {loading &&
+                <div className="w-16 h-16 border-4 border-dashed rounded-full animate-spin mx-auto dark:border-green-700"></div>
+            }
 
             <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
                 <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3 sm:max-w-sm sm:mx-auto md:max-w-full lg:max-w-full">

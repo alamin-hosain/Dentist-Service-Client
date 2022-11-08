@@ -1,8 +1,10 @@
 import React from 'react'
 import BelowMenu from '../../Components/Shared/BelowMenu'
 import { FaPhoneSquare, FaMailBulk } from "react-icons/fa";
+import { pageTitle } from '../../utils/PageTitle';
 
 const Contact = () => {
+    pageTitle('Contact - Contact With Us');
     return (
         <>
             <BelowMenu title={'Contact'} />

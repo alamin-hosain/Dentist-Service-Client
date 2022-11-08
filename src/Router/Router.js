@@ -1,5 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
+import AddAService from "../Components/AddAService/AddAService";
 import ErrorElement from "../Components/ErrorElement/ErrorElement";
+import MyReviews from "../Components/MyReviews/MyReviews";
 import Main from "../layout/Main";
 import Blog from "../Pages/Blog/Blog";
 import Contact from "../Pages/Contact/Contact";
@@ -10,6 +12,7 @@ import Register from "../Pages/Register/Register";
 import DetailsService from "../Pages/Services/DetailsService";
 import Services from "../Pages/Services/Services";
 import Team from "../Pages/Team/Team";
+import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter([
     {
@@ -28,6 +31,16 @@ const router = createBrowserRouter([
             {
                 path: '/services/:id', element: <DetailsService />,
                 loader: ({ params }) => fetch(`http://localhost:5000/services/${params.id}`),
+            },
+            {
+                path: '/addservice', element: <PrivateRoute>
+                    <AddAService />
+                </PrivateRoute>
+            },
+            {
+                path: '/myreviews', element: <PrivateRoute>
+                    <MyReviews />
+                </PrivateRoute>
             },
         ]
     }

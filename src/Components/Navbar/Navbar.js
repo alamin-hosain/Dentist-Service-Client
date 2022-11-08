@@ -68,27 +68,39 @@ const Navbar = () => {
                                 Services
                             </NavLink>
                         </li>
-                        <li>
-                            <NavLink
-                                to="/profile"
-                                className="font-semibold tracking-wide text-gray-900  duration-200 uppercase hover:bg-[#f36259] hover:rounded-full hover:p-1 hover:px-4 hover:text-white"
-                            >
-                                Profile
-                            </NavLink>
-                        </li>
+
                         {
                             user ?
-                                <li onClick={handleSignOut}>
-                                    <Link
-                                        to="/register"
-                                        className="font-semibold tracking-wide duration-200 uppercase bg-[#f36259] rounded-full p-1 px-4 text-white hover:bg-[#a62f27]"
-                                    >
-                                        Sign Out
-                                    </Link>
-                                </li>
+                                <>
+                                    <li>
+                                        <NavLink
+                                            to="/addservice"
+                                            className="font-semibold tracking-wide text-gray-900  duration-200 uppercase hover:bg-[#f36259] hover:rounded-full hover:p-1 hover:px-4 hover:text-white"
+                                        >
+                                            Add a Service
+                                        </NavLink>
+                                    </li>
+                                    <li>
+                                        <NavLink
+                                            to="/myreviews"
+                                            className="font-semibold tracking-wide text-gray-900  duration-200 uppercase hover:bg-[#f36259] hover:rounded-full hover:p-1 hover:px-4 hover:text-white"
+                                        >
+                                            My Reviews
+                                        </NavLink>
+                                    </li>
+                                    <li onClick={handleSignOut}>
+                                        <Link
+                                            to="/register"
+                                            className="font-semibold tracking-wide duration-200 uppercase bg-[#f36259] rounded-full p-1 px-4 text-white hover:bg-[#a62f27]"
+                                        >
+                                            Sign Out
+                                        </Link>
+                                    </li>
+                                </>
 
                                 :
                                 <>
+
 
                                     <li>
                                         <Link
@@ -201,25 +213,36 @@ const Navbar = () => {
                                                     Services
                                                 </NavLink>
                                             </li>
-                                            <li>
-                                                <NavLink
-                                                    to="/profile"
-                                                    className="font-semibold tracking-wide text-gray-900  duration-200 uppercase hover:bg-[#f36259] hover:rounded-full hover:p-1 hover:px-4 hover:text-white"
-                                                >
-                                                    Profile
-                                                </NavLink>
-                                            </li>
+
                                             {
                                                 user ?
-                                                    <li onClick={handleSignOut}>
-                                                        <Link
-                                                            to="/register"
-                                                            className="font-semibold tracking-wide duration-200 uppercase bg-[#f36259] rounded-full p-1 px-4 text-white hover:bg-[#a62f27]"
-                                                        >
-                                                            Sign Out
-                                                        </Link>
-                                                    </li>
+                                                    <>
+                                                        <li>
+                                                            <NavLink
+                                                                to="/addservice"
+                                                                className="font-semibold tracking-wide text-gray-900  duration-200 uppercase hover:bg-[#f36259] hover:rounded-full hover:p-1 hover:px-4 hover:text-white"
+                                                            >
+                                                                Add a Service
+                                                            </NavLink>
+                                                        </li>
+                                                        <li>
+                                                            <NavLink
+                                                                to="/myreviews"
+                                                                className="font-semibold tracking-wide text-gray-900  duration-200 uppercase hover:bg-[#f36259] hover:rounded-full hover:p-1 hover:px-4 hover:text-white"
+                                                            >
+                                                                My Reviews
+                                                            </NavLink>
+                                                        </li>
+                                                        <li onClick={handleSignOut}>
+                                                            <Link
+                                                                to="/register"
+                                                                className="font-semibold tracking-wide duration-200 uppercase bg-[#f36259] rounded-full p-1 px-4 text-white hover:bg-[#a62f27]"
+                                                            >
+                                                                Sign Out
+                                                            </Link>
+                                                        </li>
 
+                                                    </>
                                                     :
                                                     <>
 

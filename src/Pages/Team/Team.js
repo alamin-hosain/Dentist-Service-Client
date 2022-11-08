@@ -1,7 +1,9 @@
 import React from 'react'
 import BelowMenu from '../../Components/Shared/BelowMenu'
+import { pageTitle } from '../../utils/PageTitle';
 
 const Team = () => {
+    pageTitle('Team - Our Top Team');
     return (
         <>
             <BelowMenu title={'Our Teams'} />

@@ -1,10 +1,30 @@
 import React, { useContext } from 'react'
 import { FaGithub, FaGoogle } from 'react-icons/fa'
-import { Link } from 'react-router-dom'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
+import { toast } from 'react-toastify'
 import { AuthContext } from '../../contexts/AuthProvider'
 
 const Login = () => {
-    const { signInWithGoogle, signInWithGithub } = useContext(AuthContext);
+    const { signInWithGoogle, signInWithGithub, handleSignIn, loading } = useContext(AuthContext);
+    const navigate = useNavigate()
+    const location = useLocation();
+    let from = location.state?.from?.pathname || '/';
+
+    const handleFormSubmit = (e) => {
+        e.preventDefault();
+        const email = e.target.email.value;
+        const password = e.target.password.value;
+        handleSignIn(email, password)
+            .then(result => {
+                const user = result.user;
+                toast.success('Login Successfully')
+                console.log(user);
+                navigate(from, { replace: true });
+                e.target.reset();
+            })
+            .catch(e => console.error(e))
+    }
+
 
     const handleGoogleSignIn = () => {
         signInWithGoogle()
@@ -26,13 +46,17 @@ const Login = () => {
 
     return (
         <section className="bg-gray-50 dark:bg-gray-200">
+            {loading &&
+                <div className="w-16 h-16 border-4 border-dashed rounded-full animate-spin mx-auto dark:border-green-700"></div>
+            }
             <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
+
                 <div className="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
                     <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
                         <h1 className="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
                             Login Here
                         </h1>
-                        <form className="space-y-4 md:space-y-6" action="#">
+                        <form className="space-y-4 md:space-y-6" action="#" onSubmit={handleFormSubmit}>
 
                             <div>
                                 <label htmlFor="email" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your email</label>
