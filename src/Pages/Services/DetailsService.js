@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
-import toast, { Toaster } from 'react-hot-toast';
+import { ToastContainer, toast } from 'react-toastify';
+
+import 'react-toastify/dist/ReactToastify.css';
 import { Link, useLoaderData } from 'react-router-dom'
 import BelowMenu from '../../Components/Shared/BelowMenu';
 import Testimonial from './Testimonial/Testimonial';
@@ -7,7 +9,6 @@ import Testimonial from './Testimonial/Testimonial';
 const DetailsService = () => {
     const singleService = useLoaderData();
     const { img, name, price, rating, description } = singleService[0];
-
 
     const handleSubmitReview = (e) => {
         e.preventDefault();
@@ -38,7 +39,7 @@ const DetailsService = () => {
                 if (data.acknowledged) {
 
                     toast.success('Your Review Submitted Successfully');
-                    <Toaster position="bottom-center" />
+
 
                 }
 

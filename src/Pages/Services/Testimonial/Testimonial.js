@@ -4,14 +4,16 @@ import SingleReview from './SingleReview'
 
 const Testimonial = () => {
     const [reviews, setReviews] = useState([])
+    const [refresh, setRefrest] = useState(false);
 
     useEffect(() => {
         fetch('http://localhost:5000/reviews')
             .then(res => res.json())
             .then(data => {
                 setReviews(data)
+                setRefrest(!refresh)
             })
-    }, [])
+    }, [refresh])
 
 
     return (
