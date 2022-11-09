@@ -90,7 +90,7 @@ const Navbar = () => {
                                     </li>
                                     <li onClick={handleSignOut}>
                                         <Link
-                                            to="/register"
+                                            to="/login"
                                             className="font-semibold tracking-wide duration-200 uppercase bg-[#f36259] rounded-full p-1 px-4 text-white hover:bg-[#a62f27]"
                                         >
                                             Sign Out
@@ -235,7 +235,7 @@ const Navbar = () => {
                                                         </li>
                                                         <li onClick={handleSignOut}>
                                                             <Link
-                                                                to="/register"
+                                                                to="/login"
                                                                 className="font-semibold tracking-wide duration-200 uppercase bg-[#f36259] rounded-full p-1 px-4 text-white hover:bg-[#a62f27]"
                                                             >
                                                                 Sign Out

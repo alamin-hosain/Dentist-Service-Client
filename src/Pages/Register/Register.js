@@ -38,8 +38,24 @@ const Register = () => {
         signInWithGoogle()
             .then(result => {
                 const user = result.user;
+                const currentUser = {
+                    email: user.email
+                }
+
+                fetch('http://localhost:5000/jwt', {
+                    method: 'POST',
+                    headers: {
+                        'content-type': 'application/json'
+                    },
+                    body: JSON.stringify(currentUser)
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        localStorage.setItem('userToken', data.token)
+                    })
+
+                toast.success('Login Successfully')
                 navigate('/');
-                console.log(user)
             })
             .catch(e => console.error(e))
     }
