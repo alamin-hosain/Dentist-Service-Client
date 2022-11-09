@@ -22,7 +22,7 @@ const UpdateReview = () => {
             time,
         }
 
-        fetch(`http://localhost:5000/updatereview/${storedReview._id}`, {
+        fetch(`https://b6a11-service-review-server-side-alamin-hosain.vercel.app/updatereview/${storedReview._id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

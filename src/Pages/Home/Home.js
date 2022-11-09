@@ -15,7 +15,7 @@ const Home = () => {
     pageTitle('Home - Get Your Teeth Fixed');
 
     useEffect(() => {
-        fetch(`http://localhost:5000/userservice?email=${user?.email}`)
+        fetch(`https://b6a11-service-review-server-side-alamin-hosain.vercel.app/userservice?email=${user?.email}`)
             .then(res => res.json())
             .then(data => {
                 setCreatedServices(data)

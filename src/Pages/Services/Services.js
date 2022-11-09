@@ -11,7 +11,7 @@ const Services = () => {
     const { loading } = useContext(AuthContext);
 
     useEffect(() => {
-        fetch('http://localhost:5000/servicesall')
+        fetch('https://b6a11-service-review-server-side-alamin-hosain.vercel.app/servicesall')
             .then(res => res.json())
             .then(data => {
                 setAllService(data)

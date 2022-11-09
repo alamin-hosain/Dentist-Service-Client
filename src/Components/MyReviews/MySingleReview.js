@@ -10,7 +10,7 @@ const MySingleReview = ({ review, handleClick }) => {
     // const [allReview, setAllReview] = useState([]);
 
     // useEffect(() => {
-    //     fetch('http://localhost:5000/allreviews')
+    //     fetch('https://b6a11-service-review-server-side-alamin-hosain.vercel.app/allreviews')
     //         .then(res => res.json())
     //         .then(data => {
     //             console.log(data.length)

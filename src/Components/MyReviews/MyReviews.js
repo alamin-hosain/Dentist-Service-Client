@@ -8,7 +8,7 @@ const MyReviews = () => {
     const [userReview, setUserReview] = useState([]);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/userreview?email=${user?.email}`, {
+        fetch(`https://b6a11-service-review-server-side-alamin-hosain.vercel.app/userreview?email=${user?.email}`, {
             headers: {
                 authorization: `Bearer ${localStorage.getItem('userToken')}`
             }
@@ -28,7 +28,7 @@ const MyReviews = () => {
     const handleClick = (id, serviceName) => {
         const agree = window.confirm(`Are Your Sure? You Want to Delete ${serviceName}`)
         if (agree) {
-            fetch(`http://localhost:5000/userreview/${id}`, {
+            fetch(`https://b6a11-service-review-server-side-alamin-hosain.vercel.app/userreview/${id}`, {
                 method: 'DELETE',
             })
                 .then(res => res.json())

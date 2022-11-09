@@ -4,7 +4,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## This site is hosted ON fireBase.
 
-Check Out FireBase Live Site Here: [b6a11-service-review-client-side](https://github.com/facebook/create-react-app).
+Check Out FireBase Live Site Here: [b6a11-service-review-client-side](https://dentist-service-assignment.web.app/).
 
 ## This site is built with Tailwind and Daisy UI.
 

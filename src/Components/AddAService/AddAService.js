@@ -23,7 +23,7 @@ const AddAService = () => {
             price,
             email: user.email
         }
-        fetch('http://localhost:5000/services/addservice', {
+        fetch('https://b6a11-service-review-server-side-alamin-hosain.vercel.app/services/addservice', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

@@ -20,7 +20,7 @@ const router = createBrowserRouter([
         path: '/', element: <Main />, errorElement: <ErrorElement />, children: [
             {
                 path: '/', element: <Home />,
-                loader: () => fetch('http://localhost:5000/services'),
+                loader: () => fetch('https://b6a11-service-review-server-side-alamin-hosain.vercel.app/services'),
             },
             { path: '/blog', element: <Blog /> },
             { path: '/team', element: <Team /> },
@@ -31,7 +31,7 @@ const router = createBrowserRouter([
             { path: '/login', element: <Login /> },
             {
                 path: '/services/:id', element: <DetailsService />,
-                loader: ({ params }) => fetch(`http://localhost:5000/services/${params.id}`),
+                loader: ({ params }) => fetch(`https://b6a11-service-review-server-side-alamin-hosain.vercel.app/services/${params.id}`),
             },
             {
                 path: '/addservice', element: <PrivateRoute>
@@ -49,7 +49,7 @@ const router = createBrowserRouter([
 
                 </PrivateRoute>
                 ,
-                loader: ({ params }) => fetch(`http://localhost:5000/updatereview/${params.id}`)
+                loader: ({ params }) => fetch(`https://b6a11-service-review-server-side-alamin-hosain.vercel.app/updatereview/${params.id}`)
             }
         ]
     }
